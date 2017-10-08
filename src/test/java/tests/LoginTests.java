@@ -3,6 +3,7 @@ package tests;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.ExtentReports.ExtentTestManager;
 
 public class LoginTests extends BaseTest {
 
@@ -12,8 +13,10 @@ public class LoginTests extends BaseTest {
     //    Homepage homepage = new HomePage(driver,wait);
     // 3) super () method in page class transfer the driver and wait variables values to the BasePage class.
 
-    @Test (priority = 0)
+    @Test (priority = 0, description="Invalid Login Scenario with wrong username and password.")
     public void invalidLoginTest_InvalidUserNameInvalidPassword () throws InterruptedException {
+        //ExtentReports Description
+        ExtentTestManager.getTest().setDescription("Invalid Login Scenario with wrong username and password.");
 
         //*************PAGE INSTANTIATIONS*************
         HomePage homePage = new HomePage(driver,wait);
@@ -34,8 +37,11 @@ public class LoginTests extends BaseTest {
         loginPage.verifyLoginPassword(("E-posta adresiniz veya şifreniz hatalı"));
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1, description="Invalid Login Scenario with empty username and password.")
     public void invalidLoginTest_EmptyUserEmptyPassword () throws InterruptedException {
+        //ExtentReports Description
+        ExtentTestManager.getTest().setDescription("Invalid Login Scenario with empty username and password.");
+
         //*************PAGE INSTANTIATIONS*************
         HomePage homePage = new HomePage(driver,wait);
         LoginPage loginPage = new LoginPage(driver,wait);
