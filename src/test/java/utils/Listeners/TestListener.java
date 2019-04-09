@@ -35,8 +35,6 @@ public class TestListener extends BaseTest implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start");
-        //Start operation for extentreports.
-        ExtentTestManager.startTest(iTestResult.getMethod().getMethodName(),"");
     }
 
     @Override
