@@ -37,5 +37,4 @@ public class Retry implements IRetryAnalyzer {
         ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
             ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
     }
-
 }

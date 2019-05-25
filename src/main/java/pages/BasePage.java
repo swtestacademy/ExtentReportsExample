@@ -34,6 +34,4 @@ public class BasePage {
     public void waitVisibility(By by){
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
     }
-
-
 }
