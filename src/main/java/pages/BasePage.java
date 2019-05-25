@@ -32,6 +32,6 @@ public class BasePage {
 
     //Wait
     public void waitVisibility(By by){
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 }
