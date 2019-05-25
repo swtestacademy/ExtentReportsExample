@@ -11,7 +11,6 @@ import tests.BaseTest;
 import utils.ExtentReports.ExtentManager;
 import utils.ExtentReports.ExtentTestManager;
 
-
 public class TestListener extends BaseTest implements ITestListener {
 
     private static String getTestMethodName(ITestResult iTestResult) {
@@ -34,37 +33,37 @@ public class TestListener extends BaseTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start");
+        System.out.println("I am in onTestStart method " + getTestMethodName(iTestResult) + " start");
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("I am in onTestSuccess method " +  getTestMethodName(iTestResult) + " succeed");
-        //Extentreports log operation for passed tests.
+        System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
+        //ExtentReports log operation for passed tests.
         ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed");
+        System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 
-        //Get driver from BaseTest and assign to local webdriver variable.
+        //Get driver from BaseTest and assign to local webDriver variable.
         Object testClass = iTestResult.getInstance();
         WebDriver webDriver = ((BaseTest) testClass).getDriver();
 
         //Take base64Screenshot screenshot.
-        String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).
-                getScreenshotAs(OutputType.BASE64);
+        String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) webDriver).
+            getScreenshotAs(OutputType.BASE64);
 
-        //Extentreports log and screenshot operations for failed tests.
-        ExtentTestManager.getTest().log(LogStatus.FAIL,"Test Failed",
-                ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+        //ExtentReports log and screenshot operations for failed tests.
+        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
+            ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println("I am in onTestSkipped method "+  getTestMethodName(iTestResult) + " skipped");
-        //Extentreports log operation for skipped tests.
+        System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
+        //ExtentReports log operation for skipped tests.
         ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
     }
 
