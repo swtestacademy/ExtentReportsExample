@@ -2,42 +2,40 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
-    //*********Constructor*********
-    public LoginPage(WebDriver driver, WebDriverWait wait) {
-        super(driver, wait);
+    /**Constructor*/
+    public LoginPage(WebDriver driver) {
+        super(driver);
     }
 
-    //*********Web Elements*********
-    String usenameId = "email";
-    String passwordId = "password";
-    String loginButtonId = "loginButton";
-    String errorMessageUsernameXpath = "//*[@id=\"loginForm\"]/div[1]/div/div";
-    String errorMessagePasswordXpath = "//*[@id=\"loginForm\"]/div[2]/div/div ";
+    /**Web Elements*/
+    By userNameId = By.id("email");
+    By passwordId = By.id("password");
+    By loginButtonId = By.id("loginButton");
+    By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
+    By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
 
-    //*********Page Methods*********
-
-    public void loginToN11 (String username, String password){
-        //Enter Username(Email)
-        writeText(By.id(usenameId),username);
-        //Enter Password
-        writeText(By.id(passwordId), password);
-        //Click Login Button
-        click(By.id(loginButtonId));
+    /**Page Methods*/
+    public LoginPage loginToN11(String username, String password) {
+        writeText(userNameId, username);
+        writeText(passwordId, password);
+        click(loginButtonId);
+        return this;
     }
 
-    //Verify Username Condition
-    public void verifyLoginUserName (String expectedText) {
-        Assert.assertEquals(readText(By.xpath(errorMessageUsernameXpath)), expectedText);
+    public LoginPage verifyLoginUserName(String expectedText) {
+        waitVisibility(errorMessageUsernameXpath);
+        Assert.assertEquals(readText(errorMessageUsernameXpath), expectedText);
+        return this;
     }
 
-    //Verify Password Condition
-    public void verifyLoginPassword (String expectedText) {
-        Assert.assertEquals(readText(By.xpath(errorMessagePasswordXpath)), expectedText);
+    public LoginPage verifyLoginPassword(String expectedText) {
+        waitVisibility(errorMessagePasswordXpath);
+        Assert.assertEquals(readText(errorMessagePasswordXpath), expectedText);
+        return this;
     }
 
 }
