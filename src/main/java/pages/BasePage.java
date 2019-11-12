@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,21 +13,24 @@ public class BasePage {
     //Constructor
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,20);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     //Click Method
     public void click(By elementLocation) {
+        waitVisibility(elementLocation);
         driver.findElement(elementLocation).click();
     }
 
     //Write Text
     public void writeText(By elementLocation, String text) {
+        waitVisibility(elementLocation);
         driver.findElement(elementLocation).sendKeys(text);
     }
 
     //Read Text
     public String readText(By elementLocation) {
+        waitVisibility(elementLocation);
         return driver.findElement(elementLocation).getText();
     }
 
