@@ -15,13 +15,14 @@ public class LoginTests extends BaseTest {
     @Test(priority = 0, description = "Invalid Login Scenario with wrong username and password.")
     public void invalidLoginTest_InvalidUserNameInvalidPassword(Method method) {
         //ExtentReports Description
-        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with empty username and password.");
+        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with invalid username and password.");
 
         homePage
             .goToN11()
             .goToLoginPage()
-            .loginToN11("onur@swtestacademy.com", "11223344")
-            .verifyLoginPassword("E-posta adresiniz veya şifreniz hatalı");
+            .loginToN11("asdasdas", "111")
+            .verifyLoginUserName("Lütfen geçerli bir e-posta adresi girin.")
+            .verifyLoginPassword("Girilen değer en az 6 karakter olmalıdır.");
     }
 
     @Test(priority = 1, description = "Invalid Login Scenario with empty username and password.")
