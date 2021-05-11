@@ -3,11 +3,12 @@ package pages;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    public WebDriver driver;
+    public WebDriver     driver;
     public WebDriverWait wait;
 
     //Constructor
@@ -17,25 +18,22 @@ public class BasePage {
     }
 
     //Click Method
-    public void click(By elementLocation) {
-        waitVisibility(elementLocation);
-        driver.findElement(elementLocation).click();
+    public void click(By by) {
+        waitVisibility(by).click();
     }
 
     //Write Text
-    public void writeText(By elementLocation, String text) {
-        waitVisibility(elementLocation);
-        driver.findElement(elementLocation).sendKeys(text);
+    public void writeText(By by, String text) {
+        waitVisibility(by).sendKeys(text);
     }
 
     //Read Text
-    public String readText(By elementLocation) {
-        waitVisibility(elementLocation);
-        return driver.findElement(elementLocation).getText();
+    public String readText(By by) {
+        return waitVisibility(by).getText();
     }
 
     //Wait
-    public void waitVisibility(By by){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    public WebElement waitVisibility(By by) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 }
