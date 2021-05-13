@@ -5,7 +5,8 @@ import static org.testng.AssertJUnit.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.JSErrorLogs;
+import utils.logs.JSErrorLogs;
+import utils.logs.Log;
 
 public class LoginPage extends BasePage {
     /**Constructor*/
@@ -22,6 +23,7 @@ public class LoginPage extends BasePage {
 
     /**Page Methods*/
     public LoginPage loginToN11(String username, String password) {
+        Log.info("Trying to login the N11.");
         writeText(userNameId, username);
         writeText(passwordId, password);
         click(loginButtonId);
@@ -30,6 +32,7 @@ public class LoginPage extends BasePage {
 
     //Verify Username Condition
     public LoginPage verifyLoginUserName(String expectedText) {
+        Log.info("Verifying login username.");
         waitVisibility(errorMessageUsernameXpath);
         assertEquals(readText(errorMessageUsernameXpath), expectedText);
         return this;
@@ -37,6 +40,7 @@ public class LoginPage extends BasePage {
 
     //Verify Password Condition
     public LoginPage verifyLoginPassword(String expectedText) {
+        Log.info("Verifying login password.");
         waitVisibility(errorMessagePasswordXpath);
         assertEquals(readText(errorMessagePasswordXpath), expectedText);
         return this;
@@ -44,6 +48,7 @@ public class LoginPage extends BasePage {
 
     //Verify Password Condition
     public LoginPage verifyLogError() {
+        Log.info("Verifying javascript login errors.");
         assertTrue(JSErrorLogs.isLoginErrorLog(driver));
         return this;
     }
