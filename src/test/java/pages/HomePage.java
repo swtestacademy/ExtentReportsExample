@@ -5,18 +5,26 @@ import org.openqa.selenium.WebDriver;
 import utils.logs.Log;
 
 public class HomePage extends BasePage {
-    /**Constructor*/
+    /**
+     * Constructor
+     */
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    /**Variables*/
+    /**
+     * Variables
+     */
     String baseURL = "http://www.n11.com/";
 
-    /**Web Elements*/
+    /**
+     * Web Elements
+     */
     By signInButtonClass = By.className("btnSignIn");
 
-    /**Page Methods*/
+    /**
+     * Page Methods
+     */
     //Go to Homepage
     public HomePage goToN11() {
         Log.info("Opening N11 Website.");
