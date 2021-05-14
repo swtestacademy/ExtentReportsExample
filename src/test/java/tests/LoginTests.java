@@ -4,12 +4,10 @@ import static utils.extentreports.ExtentTestManager.startTest;
 
 import java.lang.reflect.Method;
 import org.testng.annotations.Test;
-import utils.logs.Log;
 
 public class LoginTests extends BaseTest {
     @Test(priority = 0, description = "Invalid Login Scenario with wrong username and password.")
     public void invalidLoginTest_InvalidUserNameInvalidPassword(Method method) {
-        Log.info(method.getName() + " test is starting.");
         //ExtentReports Description
         startTest(method.getName(), "Invalid Login Scenario with invalid username and password.");
 
@@ -22,7 +20,6 @@ public class LoginTests extends BaseTest {
 
     @Test(priority = 1, description = "Invalid Login Scenario with empty username and password.")
     public void invalidLoginTest_EmptyUserEmptyPassword(Method method) {
-        Log.info(method.getName() + " test is starting.");
         //ExtentReports Description
         startTest(method.getName(), "Invalid Login Scenario with empty username and password.");
 
