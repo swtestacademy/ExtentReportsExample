@@ -9,19 +9,25 @@ import utils.logs.JSErrorLogs;
 import utils.logs.Log;
 
 public class LoginPage extends BasePage {
-    /**Constructor*/
+    /**
+     * Constructor
+     */
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    /**Web Elements*/
-    By userNameId = By.id("email");
-    By passwordId = By.id("password");
-    By loginButtonId = By.id("loginButton");
+    /**
+     * Web Elements
+     */
+    By userNameId                = By.id("email");
+    By passwordId                = By.id("password");
+    By loginButtonId             = By.id("loginButton");
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
     By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
 
-    /**Page Methods*/
+    /**
+     * Page Methods
+     */
     public LoginPage loginToN11(String username, String password) {
         Log.info("Trying to login the N11.");
         writeText(userNameId, username);
