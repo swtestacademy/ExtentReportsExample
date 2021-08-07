@@ -1,6 +1,5 @@
 package utils.listeners;
 
-import static utils.extentreports.ExtentManager.getExtentReports;
 import static utils.extentreports.ExtentTestManager.getTest;
 
 import com.aventstack.extentreports.Status;
@@ -12,6 +11,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import tests.BaseTest;
+import utils.extentreports.ExtentManager;
 import utils.logs.Log;
 
 public class TestListener extends BaseTest implements ITestListener {
@@ -29,7 +29,7 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         Log.info("I am in onFinish method " + iTestContext.getName());
         //Do tier down operations for ExtentReports reporting!
-        getExtentReports().flush();
+        ExtentManager.extentReports.flush();
     }
 
     @Override
