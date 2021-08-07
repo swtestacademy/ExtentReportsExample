@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * extentTestMap holds the information of thread ids and ExtentTest instances.
- * ExtentReports instance created by calling getExtentReports() method from ExtentManager.
+ * ExtentReports instance created by calling createExtentReports() method from ExtentManager.
  * At startTest() method, an instance of ExtentTest created and put into extentTestMap with current thread id.
  * At getTest() method, return ExtentTest instance in extentTestMap by using current thread id.
  */
