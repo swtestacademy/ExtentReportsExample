@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium-version>4.0.0-rc-1</selenium-version>
         <testng-version>7.4.0</testng-version>
-        <log4j-version>2.14.1</log4j-version>
+        <log4j-version>2.17.1</log4j-version>
         <extentreports-version>5.0.8</extentreports-version>
         <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
     </properties>
