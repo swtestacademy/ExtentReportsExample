@@ -1,9 +1,6 @@
 package utils.listeners;
 
-import static utils.extentreports.ExtentTestManager.getTest;
-
 import com.aventstack.extentreports.Status;
-import java.util.Objects;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +10,10 @@ import org.testng.ITestResult;
 import tests.BaseTest;
 import utils.extentreports.ExtentManager;
 import utils.logs.Log;
+
+import java.util.Objects;
+
+import static utils.extentreports.ExtentTestManager.getTest;
 
 public class TestListener extends BaseTest implements ITestListener {
     private static String getTestMethodName(ITestResult iTestResult) {
@@ -54,11 +55,11 @@ public class TestListener extends BaseTest implements ITestListener {
 
         //Take base64Screenshot screenshot for extent reports
         String base64Screenshot =
-            "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
+                "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
 
         //ExtentReports log and screenshot operations for failed tests.
         getTest().log(Status.FAIL, "Test Failed",
-            getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
+                getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
     }
 
     @Override

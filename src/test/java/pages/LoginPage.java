@@ -1,12 +1,12 @@
 package pages;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.logs.JSErrorLogs;
 import utils.logs.Log;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class LoginPage extends BasePage {
     /**
@@ -19,9 +19,9 @@ public class LoginPage extends BasePage {
     /**
      * Web Elements
      */
-    By userNameId                = By.id("email");
-    By passwordId                = By.id("password");
-    By loginButtonId             = By.id("loginButton");
+    By userNameId = By.id("email");
+    By passwordId = By.id("password");
+    By loginButtonId = By.id("loginButton");
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
     By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
 

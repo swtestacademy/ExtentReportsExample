@@ -12,6 +12,6 @@ public class JSErrorLogs {
     public static Boolean isLoginErrorLog(WebDriver driver) {
         LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
         return logEntries.getAll().stream()
-            .anyMatch(logEntry -> logEntry.getMessage().contains("An invalid email address was specified"));
+                .anyMatch(logEntry -> logEntry.getMessage().contains("An invalid email address was specified"));
     }
 }

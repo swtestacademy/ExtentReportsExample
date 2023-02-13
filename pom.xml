@@ -4,17 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>allurereportexample</groupId>
-    <artifactId>allurereportexample</artifactId>
+    <groupId>extent-reports-example</groupId>
+    <artifactId>extent-reports-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium-version>4.6.0</selenium-version>
-        <testng-version>7.6.1</testng-version>
+        <selenium-version>4.8.0</selenium-version>
+        <testng-version>7.7.1</testng-version>
         <log4j-version>2.19.0</log4j-version>
-        <extentreports-version>5.0.8</extentreports-version>
-        <maven-surefire-plugin-version>3.0.0-M7</maven-surefire-plugin-version>
+        <extentreports-version>5.0.9</extentreports-version>
+        <maven-surefire-plugin-version>3.0.0-M8</maven-surefire-plugin-version>
+        <lombok-version>1.18.26</lombok-version>
     </properties>
 
     <dependencies>
@@ -22,6 +23,13 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -56,8 +64,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source> <!--For JAVA 8 use 1.8-->
-                    <target>11</target> <!--For JAVA 8 use 1.8-->
+                    <source>17</source> <!--For JAVA 8 use 1.8-->
+                    <target>17</target> <!--For JAVA 8 use 1.8-->
                 </configuration>
             </plugin>
             <plugin>

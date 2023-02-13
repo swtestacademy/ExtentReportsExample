@@ -15,7 +15,7 @@ public class HomePage extends BasePage {
     /**
      * Variables
      */
-    String baseURL = "http://www.n11.com/";
+    String baseURL = "https://www.n11.com/";
 
     /**
      * Web Elements
