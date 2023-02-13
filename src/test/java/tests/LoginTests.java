@@ -16,7 +16,7 @@ public class LoginTests extends BaseTest {
                 .goToN11()
                 .goToLoginPage()
                 .loginToN11("onur@swtestacademy.com", "11122233444")
-                .verifyLogError();
+                .verifyLoginPassword("E-posta adresiniz veya şifreniz hatalı");
     }
 
     @Test(priority = 1, description = "Invalid Login Scenario with empty username and password.")

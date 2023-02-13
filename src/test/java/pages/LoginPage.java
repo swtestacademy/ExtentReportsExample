@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     By passwordId = By.id("password");
     By loginButtonId = By.id("loginButton");
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
-    By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
+    By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div");
 
     /**
      * Page Methods
