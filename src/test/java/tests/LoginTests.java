@@ -15,7 +15,7 @@ public class LoginTests extends BaseTest {
         homePage
                 .goToN11()
                 .goToLoginPage()
-                .loginToN11("onur@swtestacademy.com", "11122233444")
+                .loginToN11("onur@swtestacademy.com", "111222334443313")
                 .verifyLoginPassword("E-posta adresiniz veya şifreniz hatalı");
     }
 
