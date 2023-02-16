@@ -28,7 +28,7 @@ public class LoginTests extends BaseTest {
                 .goToN11()
                 .goToLoginPage()
                 .loginToN11("", "")
-                .verifyLoginUserName("Lütfen e-posta adresinizi girin.")
+                .verifyLoginUserName("Lütfen e-posta adresinizi girin.") 
                 .verifyLoginPassword("WRONG MESSAGE FOR FAILURE!");
     }
 }
