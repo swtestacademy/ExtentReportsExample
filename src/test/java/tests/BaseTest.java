@@ -4,6 +4,8 @@ import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +14,7 @@ import pages.HomePage;
 import utils.logs.Log;
 
 public class BaseTest {
-    public WebDriver driver;
+    private WebDriver driver;
     public HomePage homePage;
 
     public WebDriver getDriver() {
@@ -20,12 +22,12 @@ public class BaseTest {
     }
 
     @BeforeSuite
-    public void setupProxy() {
+    public void setupProxy(ITestContext iTestContext) {
 
     }
 
     @BeforeClass
-    public void classLevelSetup() {
+    public void classLevelSetup(ITestContext iTestContext) {
         Log.info("Tests is starting!");
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -36,6 +38,7 @@ public class BaseTest {
 
         firefoxOptions.setCapability("proxy", proxy);
         driver = new FirefoxDriver(firefoxOptions);
+        iTestContext.setAttribute("WebDriver", driver);
     }
 
     @BeforeMethod
