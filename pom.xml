@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium-version>4.8.0</selenium-version>
         <testng-version>7.7.1</testng-version>
-        <log4j-version>2.19.0</log4j-version>
+        <log4j-version>2.25.3</log4j-version>
         <extentreports-version>5.0.8</extentreports-version>
         <maven-surefire-plugin-version>3.0.0-M8</maven-surefire-plugin-version>
         <lombok-version>1.18.26</lombok-version>
